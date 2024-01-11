@@ -13,7 +13,7 @@ function App() {
   const [password, setPassword] = useState('')
   const passwordRef = useRef(null)
 
-  // Any any of the values in the dependency array does not change too often re-run GenPassword
+  // If any of the values in the given dependency array does not change too often re-run GenPassword
   const GenPassword = useCallback(() => {
     let password = '';
     let letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -30,7 +30,7 @@ function App() {
   
   const CopyPassword = () => { window.navigator.clipboard.writeText(password); passwordRef.current?.select() }
 
-  // Any any of the values in the dependency changes re-run GenPassword
+  // If any of the values in the given dependency changes re-run GenPassword
   useEffect(() => { 
     GenPassword() 
   }, [length, uppercaseFlag, numberFlag, specialCharFlag])

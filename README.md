@@ -46,4 +46,3 @@ To use the Password Generator, follow these steps:
     ```
 
 4. The web browser will open automatically and you can now generate your secured passwords.
-
