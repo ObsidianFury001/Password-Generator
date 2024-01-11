@@ -20,7 +20,7 @@ This Password Generator is a web application developed using React and styled wi
 
 ### Live Demo
 
-![Demo]('https://github.com/ObsidianFury001/Password-Generator/blob/master/Live_demo.gif')
+![Demo](https://github.com/ObsidianFury001/Password-Generator/blob/master/Live_demo.gif)
 
 ### Getting Started
 
