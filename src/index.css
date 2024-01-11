@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* font-family: "Dongle", system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Poppins', sans-serif;
+
+  color: rgba(255, 255, 255, 0.87);
+
+  --custom-yellow: #FFBE0B;
+  --custom-orange: #FB5607;
+  --custom-pink: #FF006E;
+  --custom-purple: #8338EC;
+  --custom-blue: #3A86FF; 
+
+  --text-white: #EEF0F2;
+  --text-saffron: #EEC643;
+
+  --button-primary: #0075ff;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.text-shadow {
+  text-shadow: 3px 3px 3px rgba(0,0,0, 0.8);
+}
+
+*::selection {
+  background-color: #80e4e2e7;
+  color: black;
+}

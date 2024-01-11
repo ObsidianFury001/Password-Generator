@@ -1,0 +1,257 @@
+:root {
+    --color-bg1: rgb(108, 0, 162);
+    --color-bg2: rgb(0, 17, 82);
+    --color-1: 18, 113, 255;
+    --color-2: 221, 74, 225;
+    --color-3: 100, 220, 255;
+    --color-4: 200, 50, 50;
+    --color-5: 180, 180, 50;
+    --color-6: 10, 245, 241;
+
+    --color-hover: 140, 100, 255;
+    --bubble-size: 80%;
+    --color-blend-mode: hard-light;
+    --animation-duration: 60s;
+    --animation-timing-function: linear;
+}
+
+/* Parent container */
+.gradient-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2)); */
+    /* background-image: linear-gradient(-45deg, #FFBE0B, #FB5607, #FF006E, #8338ec, #3A86FF); */
+    top: 0;
+    left: 0;
+    /* background-size: 450% 450%; */
+    animation: gradient-flow var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+.gradient-area {
+    width: 100%;
+    height: 100%;
+}
+
+/* Dark Blue Bubble */
+.bubble-1 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-1), 0.8) 0,
+            rgba(var(--color-1), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    top: calc(50% - var(--bubble-size)/1.15);
+    left: calc(50% - var(--bubble-size)/1.25);
+    transform-origin: center center;
+    opacity: 1;
+
+    animation:
+        moveLeft var(--animation-duration) var(--animation-timing-function) infinite,
+        moveUpwards var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+/* Pink Bubble */
+.bubble-2 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-2), 0.8) 0,
+            rgba(var(--color-2), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    top: calc(50% - var(--bubble-size) * .3);
+    left: calc(50% - var(--bubble-size));
+    transform-origin: calc(50% - 400px);
+    opacity: 1;
+
+    animation: moveUpwards var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+/*  Sky Blue Bubble */
+.bubble-3 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-3), 0.8) 0,
+            rgba(var(--color-3), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    top: calc(50% - var(--bubble-size)/ 3.35);
+    left: calc(50% - var(--bubble-size)/ 1.45);
+
+    transform-origin: calc(50% - 400px);
+    opacity: 1;
+
+    animation: moveLeft var(--animation-duration) var(--animation-timing-function) infinite,
+               moveDownwards var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+/* Red Bubble */
+.bubble-4 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-4), 0.8) 0,
+            rgba(var(--color-4), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    top: calc(50% - var(--bubble-size)/ 1.8);
+    left: calc(50% - var(--bubble-size)/ 2.25);
+    transform-origin: calc(50% + 400px);
+    opacity: 1;
+
+    animation: spin var(--animation-duration) linear infinite,
+               moveRight var(--animation-duration) linear infinite;
+}
+
+/* Yellow bubble */
+.bubble-5 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-5), 0.8) 0,
+            rgba(var(--color-5), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    transform-origin: calc(50% - 800px);
+    top: calc(50% - var(--bubble-size) /1.25);
+    left: calc(50% - var(--bubble-size) /10);
+    opacity: 1;
+
+    animation: moveDownwards var(--animation-duration) var(--animation-timing-function) infinite,
+               moveLeft var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+/* Teal bubble */
+.bubble-6 {
+    position: absolute;
+    background: radial-gradient(circle at center,
+            rgba(var(--color-6), 0.8) 0,
+            rgba(var(--color-6), 0) 30%) no-repeat;
+    mix-blend-mode: var(--color-blend-mode);
+
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+
+    transform-origin: calc(50% - 800px);
+    top: calc(50% - var(--bubble-size) /17.25);
+    left: calc(50% - var(--bubble-size) /17.25);
+    opacity: 1;
+
+    animation: moveLeft var(--animation-duration) var(--animation-timing-function) infinite;
+}
+
+
+/* Animations */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveUpwards {
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(50%);
+    }
+
+    75% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes moveDownwards {
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(-50%);
+    }
+
+    75% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0%)
+    }
+
+    25% {
+        transform: translateX(50%);
+    }
+
+    75% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0%)
+    }
+
+    25% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
