@@ -164,8 +164,8 @@ function App() {
 
                 <Row className="mt-4">
                   <button className='bg-slate-900 text-gray-200 text-md font-semibold
-                                  shadow-sky-100 shadow-sm 
-                                  hover:shadow-sky-300 hover:shadow-lg rounded-xl
+                                  shadow-sky-100 shadow-sm rounded-xl
+                                  hover:shadow-sky-300 hover:shadow-lg hover:text-white
                                   hover:bg-[#0077ffe7]
                                   transition-all duration-500 ease-in-out
                                   flex justify-center items-center
